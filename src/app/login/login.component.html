@@ -1,0 +1,27 @@
+<!-- <p>login works!</p> -->
+
+<div id="loginbox">
+    <div class="row-6" id="box1"></div>
+    <div class="row-6" id="box2">
+        <form action="" [formGroup]="loginForm" (ngSubmit)="validate()">
+            <h3><b> Login</b></h3>
+            <div class="form-group">
+                <div>
+                    <input type="text" class="form-control" formControlName="email" name="email" id="email" placeholder="E-mail">
+                    <span style="color: red;" *ngIf="email?.invalid && email?.touched">! please enter a valid email</span>
+                </div>
+                <div><i class="far fa-user"></i></div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <input type="password" class="form-control" formControlName="password" name="password" id="password" placeholder="Password">
+                    <span style="color: red;" *ngIf="password?.invalid && password?.touched">  ! please enter a valid password</span>
+                </div>
+                <div><i class="fas fa-lock"></i></div>
+            </div>
+            <button type="submit" class="btn btn-secondary" style="background-color: green;" [disabled]="loginForm?.invalid"><b> Login</b></button>
+        </form>
+        <p style="color: blue;">Don't have an account ? <button id="navbutton" style="background-color: chartreuse;" (click)="nav_register() ">Register</button></p>
+        
+    </div>
+</div>
